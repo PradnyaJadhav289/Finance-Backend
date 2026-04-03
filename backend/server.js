@@ -6,6 +6,7 @@ import connectDB from "./database/db.js";
 import recordRoute from "./routes/record.route.js";
 import userRoute from "./routes/user.Route.js";
 import summaryRoute from "./routes/summary.route.js";
+import insightsRoute from "./routes/insights.route.js";
 
 dotenv.config();
 const app=express();
@@ -20,6 +21,7 @@ connectDB();
 app.use('/records', recordRoute);
 app.use('/users', userRoute);
 app.use('/summary',summaryRoute);
+app.use('/insights', insightsRoute);
 
 app.get("/", (req, res) => {
   res.send("Finance Backend is running");
